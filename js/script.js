@@ -1,19 +1,22 @@
 const root = new Vue({
     el: '#root',
     data: {
-        userEmail: "",
+        userEmail: [],
     },
     methods: {},
     created() { },
     mounted() {
         const self = this;
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(function (response) {
-                const result = response;
-                console.log(response.data.response)
-                self.userEmail = response.data.response;
+        for (let i = 0; i < 10; i++) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then(function (response) {
+                    const result = response;
+                    console.log(response.data.response)
+                    self.userEmail.push(response.data.response);
 
-            });
+                });
+
+        }
     },
 });
 
