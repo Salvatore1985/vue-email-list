@@ -2,12 +2,25 @@ const root = new Vue({
     el: '#root',
     data: {
         userEmail: [],
+        numberList: 10,
     },
-    methods: {},
-    created() { },
+    methods: {
+        /*  generateLIst() {
+ 
+         } */
+        /*      myParseIntNUmber(text) {
+                 this.text = parseInt(this.text);
+                 return this.text;
+             } */
+
+    },
+    created() {
+    },
     mounted() {
         const self = this;
-        for (let i = 0; i < 10; i++) {
+
+
+        for (let i = 0; i < self.numberList; i++) {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then(function (response) {
                     const result = response;
@@ -17,6 +30,13 @@ const root = new Vue({
                 });
 
         }
+
     },
 });
 
+console.log(typeof myParseIntNUmber("10"));
+
+function myParseIntNUmber(text) {
+    text = parseInt(text);
+    return text;
+}
