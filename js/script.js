@@ -1,13 +1,19 @@
 const root = new Vue({
     el: '#root',
-    data: {},
+    data: {
+        userEmail: "",
+    },
     methods: {},
     created() { },
-    mounted() { },
+    mounted() {
+        const self = this;
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then(function (response) {
+                const result = response;
+                console.log(response.data.response)
+                self.userEmail = response.data.response;
+
+            });
+    },
 });
 
-AXIOS.get('https://flynn.boolean.careers/exercises/api/random/mail')
-    .then(function (response) {
-        const result = response.data;
-        console.log(result)
-    });

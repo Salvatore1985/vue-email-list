@@ -13,3 +13,6 @@ div.my-container-email{
     background-color: gray;
     color: rgb(235, 235, 235);
 }
+ul li{
+    list-style-type:none ;
+}
