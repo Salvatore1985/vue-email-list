@@ -39,9 +39,9 @@
                 <div class="col-12 my-container-email p-3">
                     <div class="my-email p-3 rounded-3">
                         <!--  <h2 class="m-0 px-5 " v-for="element in 10">{{element}} :{{userEmail}}</h2> -->
-                        <ul class="m-0 px-5 " v-for="(element) in userEmail">
+                        <ul class="m-0 px-5 " v-for="(element, index) in userEmail">
                             <li>
-                                {{element}}
+                                {{index+1}} : {{element}}
                             </li>
                         </ul>
                     </div>
