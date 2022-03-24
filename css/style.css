@@ -1,8 +1,12 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+background-color: rgb(223, 223, 223)
+}
 header{
     background-color: rgb(75, 75, 253);
+   /*  background-color: rgb(179, 176, 176); */
     color:white;
     text-shadow: 1px 5px black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 div.my-container-email{
     background-color: rgb(112, 112, 112);
@@ -18,4 +22,7 @@ ul li{
 }
 sup{
     font-size: 1rem;
+}
+input{
+    color: rgb(75, 75, 253);
 }
