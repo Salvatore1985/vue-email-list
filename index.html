@@ -28,32 +28,42 @@
 </head>
 
 <body>
-    <!-- header -->
-    <header class="container-fluid">
-        <h1 class="text-center p-3">Email-Boolen</h1>
-    </header>
-    <!-- main -->
-    <main id="root">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 my-container-email p-3">
-                    <div class="my-email p-3 rounded-3">
-                        <ul class="m-0 px-5 " v-for="(element, index) in userEmail">
-                            <li>
-                                {{index+1}} : {{element}}
-                            </li>
-                        </ul>
+    <div id="root">
+        <!-- header -->
+        <header class="container-fluid" v-for="element in currentEmail">
+
+            <h1 class="text-center p-3">Email-Boolen <sup>Ci sono {{element}} email</sup></h1>
+        </header>
+        <!-- main -->
+        <main>
+            <div class="d-flex justify-content-center align-items-center">
+                <div class=" text-danger text-center ">
+                    <h2 :class="(userEmail.length == 0) ? '' : 'd-none' ">Non ci sono Email!! genera
+                        email &RightArrow;</h2>
+                </div>
+                <div class="px-5">
+                    <input @keyup.enter="myParseIntNUmber()" v-model="numberList" type="number"
+                        placeholder="Crea (n) Email">
+                </div>
+            </div>
+            <div class="container p-5">
+                <div class="row">
+                    <div class="col-12 my-container-email p-3">
+                        <div class="my-email p-3 rounded-3">
+                            <ul class="m-0 px-5 " v-for="(element, index) in userEmail">
+                                <li>
+                                    {{index+1}} : {{element}}
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <input @keyup.enter="myParseIntNUmber()" v-model="numberList" class="w-100 mt-2" type="number"
-                placeholder="Inserisci qui un numero per determinarare quanti Email vuoi creare">
-        </div>
-    </main>
-    <!-- footer -->
-    <footer></footer>
-
+        </main>
+        <!-- footer -->
+        <footer></footer>
+    </div>
     <script src="js/script.js"></script>
 </body>
 

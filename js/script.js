@@ -2,12 +2,19 @@ const root = new Vue({
     el: '#root',
     data: {
         userEmail: [],
-        numberList: 20,
+        currentEmail: [0],
+        numberList: null,
     },
     methods: {
         generateLIst() {
             const self = this;
             self.userEmail = [];
+            self.currentEmail = []
+            console.log("digitato", self.userEmail);
+
+            if (self.numberList === null) {
+                self.numberList = 0;
+            }
             for (let i = 0; i < self.numberList; i++) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                     .then(function (response) {
@@ -18,7 +25,9 @@ const root = new Vue({
                     });
 
             }
-
+            self.currentEmail.push(self.numberList);
+            console.log("inserito", self.currentEmail);
+            self.numberList = null;
         },
         myParseIntNUmber() {
             this.numberList = parseInt(this.numberList);

@@ -16,3 +16,6 @@ div.my-container-email{
 ul li{
     list-style-type:none ;
 }
+sup{
+    font-size: 1rem;
+}
